@@ -19,9 +19,17 @@ import searchapp
 from searchapp import urls
 from searchapp.views import homepage
 from searchapp.views import counter
+from searchapp.views import register
+from searchapp.views import login
+from searchapp.views import logout
+from searchapp.views import page
 
 urlpatterns = [
     path('', include(searchapp.urls)),
     path('counter/', include(searchapp.urls)),
     path('admin/', admin.site.urls),
-]
+    path('register/', include(searchapp.urls)),
+    path('login/', include(searchapp.urls)),
+    path('logout/', include(searchapp.urls)),
+    path('page/<str:pk>', include(searchapp.urls))
+    ]
